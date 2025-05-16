@@ -1,0 +1,37 @@
+artifact_path: model
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.12.10
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.6.1
+mlflow_version: 2.19.0
+model_size_bytes: 1027860
+model_uuid: 6c3dee08983a4092a9f4b5efd87f3273
+run_id: cf837f7aef4f485f97675f1295bbee93
+saved_input_example_info:
+  artifact_path: input_example.json
+  pandas_orient: split
+  serving_input_path: serving_input_example.json
+  type: dataframe
+signature:
+  inputs: '[{"type": "double", "name": "AGE", "required": true}, {"type": "double",
+    "name": "Urea", "required": true}, {"type": "double", "name": "Cr", "required":
+    true}, {"type": "double", "name": "HbA1c", "required": true}, {"type": "double",
+    "name": "Chol", "required": true}, {"type": "double", "name": "TG", "required":
+    true}, {"type": "double", "name": "HDL", "required": true}, {"type": "double",
+    "name": "LDL", "required": true}, {"type": "double", "name": "VLDL", "required":
+    true}, {"type": "double", "name": "BMI", "required": true}, {"type": "double",
+    "name": "Gender_F", "required": true}, {"type": "double", "name": "Gender_M",
+    "required": true}]'
+  outputs: '[{"type": "long", "required": true}]'
+  params: null
+utc_time_created: '2025-05-16 16:35:50.654668'
