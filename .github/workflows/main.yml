@@ -32,11 +32,9 @@ jobs:
         run: |
           mlflow run MLProject --env-manager=local
  
-      # Save models to GitHub Repository
-      - name: Save mlruns to repo
-        run: |
-          git config --global user.name ${{ secrets.username }}
-          git config --global user.email ${{ secrets.email }}
-          git add mlruns/
-          git commit -m "Save mlruns from CI run"
-          git push origin master
+      # Upload mlruns as artifact
+      - name: Upload mlruns as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: mlflow-logs
+          path: mlruns/
