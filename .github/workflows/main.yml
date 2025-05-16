@@ -22,16 +22,16 @@ jobs:
         with:
           python-version: "3.12.10"
  
-      # Install mlflow
+      # Install from requirements.txt
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install mlflow
-      
+          pip install -r requirements.txt
+               
       # Run as a mlflow project
       - name: Run MLflow project
         run: |
-          mlflow run MLProject --env-manager=conda
+          mlflow run MLProject --env-manager=local
  
       # Save models to GitHub Repository
       - name: Save mlruns to repo
